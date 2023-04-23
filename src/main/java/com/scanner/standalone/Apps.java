@@ -3,8 +3,6 @@ package com.scanner.standalone;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.path.json.JsonPath;
 import org.json.simple.JSONObject;
-//import org.json.simple.parser.JSONParser;
-
 
 import java.io.File;
 import java.io.FileReader;
@@ -13,6 +11,8 @@ import java.util.List;
 
 public class Apps {
     public static void main(String[] args) {
+        SearchVulnerability search = new SearchVulnerability();
+        File dir = new File("C:\\Users\\hashghost\\Desktop\\4xxx");
         ObjectMapper mapper = new ObjectMapper();
         try {
             // Read JSON file from the local directory
@@ -21,9 +21,13 @@ public class Apps {
             // Map the JSON to a Java object
             Data[] apps = mapper.readValue(jsonFile, Data[].class);
 
-            // Do something with the object
+            // Compare json files (apps.json and cve.json)
             for (Data app : apps) {
-                System.out.println(app.getDisplayName());
+                if (app.getDisplayName() != null && app.getDisplayVersion() != null) {
+                   // System.out.println(app.getDisplayName());
+                    String appName = app.getDisplayName();
+                    search.showFiles(dir.listFiles(), appName);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
