@@ -1,0 +1,38 @@
+.root{
+     -fx-background: #2c3341;
+}
+
+.frame{
+-fx-background-color: #2c3341;
+}
+
+.topbar{
+    -fx-background-color: #2c3341;
+     }
+
+.title{
+    -fx-background-color: #2c3341;
+}
+.firstPane{
+    -fx-background-color:black;
+
+}
+.RunScanButton{
+    -fx-background-color:#2c3341;
+}
+.AnalyzeButton{
+    -fx-background-color:#2c3341;
+}
+.UpdateDB{
+    -fx-background-color:#2c3341;
+}
+
+
+/* Scanning Page */
+#select_App_Button{
+    -fx-background-color: #44CC88;
+    -fx-background-radius: 10px;
+}
+#bottom-left{
+    -fx-background-color: red;
+}
