@@ -26,7 +26,8 @@ public class Apps {
                 if (app.getDisplayName() != null && app.getDisplayVersion() != null) {
                    // System.out.println(app.getDisplayName());
                     String appName = app.getDisplayName();
-                    search.showFiles(dir.listFiles(), appName);
+                    String appVersion = app.getDisplayVersion();
+                    search.showFiles(dir.listFiles(), appName,appVersion);
                 }
             }
         } catch (IOException e) {
