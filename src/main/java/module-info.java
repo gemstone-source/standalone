@@ -7,7 +7,7 @@ module com.scanner.standalone {
     requires rest.assured;
     requires json.path;
     requires com.fasterxml.jackson.databind;
-
+    requires maven.artifact;
 
     opens com.scanner.standalone to javafx.fxml;
     exports com.scanner.standalone;

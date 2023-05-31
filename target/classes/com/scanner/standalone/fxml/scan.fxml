@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.layout.VBox?>
-<AnchorPane prefHeight="720.0" prefWidth="1080.0"  stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Contollers.ScanController">
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Contollers.ScanController">
    <children>
       <Pane fx:id="pane" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -34,7 +34,7 @@
       </Pane>
       <HBox layoutX="28.0" layoutY="279.0" prefHeight="330.0" prefWidth="1024.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="279.0">
          <children>
-            <VBox id="partial-scan" spacing="60" alignment="CENTER" fx:id="pane1" prefHeight="300.0" prefWidth="480.0" styleClass="topbar"  HBox.hgrow="ALWAYS">
+            <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="topbar" HBox.hgrow="ALWAYS">
                <effect>
                   <DropShadow />
                </effect>
@@ -52,7 +52,7 @@
                         <Image url="@../icons/icons8-scan-64.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="11.0" layoutY="-47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select application/applications which you want to scan, You can scan single application or multiple with this option." wrappingWidth="550.0" y="282.0">
+                  <Text fill="WHITE" layoutX="11.0" layoutY="-47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select application/applications which you want to scan, You can scan single application or multiple with this option." wrappingWidth="550.0" y="282.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -62,7 +62,7 @@
                   <Insets right="30.0" />
                </HBox.margin>
             </VBox>
-            <VBox id="full-right-scan" spacing="60" alignment="CENTER" fx:id="pane11" prefHeight="300.0" prefWidth="480.0" styleClass="frame"  HBox.hgrow="ALWAYS">
+            <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="frame" HBox.hgrow="ALWAYS">
                <effect>
                   <DropShadow />
                </effect>
@@ -70,7 +70,7 @@
                   <Insets topRightBottomLeft="10" />
                </padding>
                <children>
-                  <Label alignment="CENTER" contentDisplay="TOP" text="Select Application to Scan" textAlignment="JUSTIFY" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="TOP" text="Multiple ApplicationScan" textAlignment="JUSTIFY" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -80,7 +80,7 @@
                         <Image url="@../icons/icons8-scan-64.png" />
                      </image>
                   </ImageView>
-                  <Text id="full-right-scan-text" accessibleRole="IMAGE_VIEW" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Select application/applications which you want to scan, You can scan single application or multiple with this option." textAlignment="JUSTIFY" textOrigin="BOTTOM" wrappingWidth="550.0">
+                  <Text id="full-right-scan-text" accessibleRole="IMAGE_VIEW" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="With this option you can scan more applications and it is automated you don't have to seletct application to scan" textAlignment="JUSTIFY" textOrigin="BOTTOM" wrappingWidth="550.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -105,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button id="select_App_Button" onMouseClicked="#switchToDash" alignment="CENTER" layoutX="706.0" layoutY="619.0" mnemonicParsing="false"  text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
+      <Button id="select_App_Button" alignment="CENTER" layoutX="706.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#switchToDash" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
