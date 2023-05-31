@@ -97,7 +97,7 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <Button id="select_App_Button" alignment="CENTER" layoutX="225.0" layoutY="609.0" mnemonicParsing="false" stylesheets="@../styles/style.css" text="Select App" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="400.0">
+      <Button id="select_App_Button" alignment="CENTER" layoutX="225.0" layoutY="609.0" mnemonicParsing="false" onMouseClicked="#switchToApps" stylesheets="@../styles/style.css" text="Select App" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="400.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -105,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button id="select_App_Button" alignment="CENTER" layoutX="706.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#switchToDash" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
+      <Button id="select_App_Button" alignment="CENTER" layoutX="706.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#switchToReport" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

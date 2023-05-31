@@ -33,5 +33,9 @@ public class DashboardController {
     void switchToScan() {
         Coordinator.stage.setScene(Coordinator.scanScene);
     }
+    @FXML
+    void switchToHistory() {
+        Coordinator.stage.setScene(Coordinator.historyScene);
+    }
 
 }

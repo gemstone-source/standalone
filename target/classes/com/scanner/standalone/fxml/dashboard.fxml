@@ -76,7 +76,7 @@
                         <Insets top="100.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="analyze" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" text="Analyze" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="analyze" onMouseClicked="#switchToHistory" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" text="Analyze" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>

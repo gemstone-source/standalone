@@ -4,6 +4,7 @@ import com.scanner.standalone.Coordinator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Label;
@@ -28,9 +29,12 @@ public class ScanController {
     private Label welcomeText;
 
     @FXML
-    protected void switchToDash() {
-        Coordinator.stage.setScene(Coordinator.dashScene);
+    protected void switchToApps() {
+        Coordinator.stage.setScene(Coordinator.appScene);
     }
-
+    @FXML
+    protected void switchToReport() {
+        Coordinator.stage.setScene(Coordinator.reportScene);
+    }
 }
 
