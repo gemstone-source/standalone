@@ -1,4 +1,4 @@
-package com.scanner.standalone.Contollers;
+package com.scanner.standalone.Controllers;
 
 import com.scanner.standalone.Coordinator;
 import javafx.fxml.FXML;
@@ -21,10 +21,13 @@ public class ReportController {
 
     @FXML
     private VBox pane12;
-
-    void switchToScan() {
-        Coordinator.stage.setScene(Coordinator.scanScene);
+    @FXML
+    void switchToHistory() {
+        Coordinator.stage.setScene(Coordinator.historyScene);
     }
-
+    @FXML
+    void switchToDash() {
+        Coordinator.stage.setScene(Coordinator.dashScene);
+    }
 }
 

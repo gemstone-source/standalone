@@ -1,10 +1,8 @@
-package com.scanner.standalone.Contollers;
+package com.scanner.standalone.Controllers;
 
 import com.scanner.standalone.Coordinator;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Label;
@@ -35,6 +33,14 @@ public class ScanController {
     @FXML
     protected void switchToReport() {
         Coordinator.stage.setScene(Coordinator.reportScene);
+    }
+    @FXML
+    void switchToHistory() {
+        Coordinator.stage.setScene(Coordinator.historyScene);
+    }
+    @FXML
+    void switchToDash() {
+        Coordinator.stage.setScene(Coordinator.dashScene);
     }
 }
 

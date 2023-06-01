@@ -1,16 +1,10 @@
-package com.scanner.standalone.Contollers;
+package com.scanner.standalone.Controllers;
 
 import com.scanner.standalone.Coordinator;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import java.io.IOException;
 
 public class DashboardController {
 
@@ -28,7 +22,6 @@ public class DashboardController {
 
     @FXML
     private Button updateDB;
-
     @FXML
     void switchToScan() {
         Coordinator.stage.setScene(Coordinator.scanScene);
@@ -37,5 +30,12 @@ public class DashboardController {
     void switchToHistory() {
         Coordinator.stage.setScene(Coordinator.historyScene);
     }
-
+    @FXML
+    void switchToSideBar() {
+        Coordinator.stage.setScene(Coordinator.sideBarScene);
+    }
+    @FXML
+    void switchToDash() {
+        Coordinator.stage.setScene(Coordinator.dashScene);
+    }
 }

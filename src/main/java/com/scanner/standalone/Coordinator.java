@@ -13,6 +13,7 @@ public class Coordinator {
     public static Scene scanScene;
     public static Scene appScene;
     public static Scene historyScene;
+    public static Scene sideBarScene;
 
     private void createDashScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dashboard.fxml"));
@@ -36,6 +37,10 @@ public class Coordinator {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/report.fxml"));
         reportScene = new Scene(fxmlLoader.load());
     }
+    private void createSideBarScene() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/sideBar.fxml"));
+        sideBarScene = new Scene(fxmlLoader.load());
+    }
 
     public Coordinator() throws IOException {
         createDashScene();
@@ -43,6 +48,7 @@ public class Coordinator {
         createAppScene();
         createReportScene();
         createHistoryScene();
+        createSideBarScene();
     }
 
 

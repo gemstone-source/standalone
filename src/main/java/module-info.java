@@ -11,6 +11,6 @@ module com.scanner.standalone {
 
     opens com.scanner.standalone to javafx.fxml;
     exports com.scanner.standalone;
-    exports com.scanner.standalone.Contollers;
-    opens com.scanner.standalone.Contollers to javafx.fxml;
+    exports com.scanner.standalone.Controllers;
+    opens com.scanner.standalone.Controllers to javafx.fxml;
 }
