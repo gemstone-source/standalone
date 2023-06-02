@@ -24,145 +24,148 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.DashboardController" >
+<AnchorPane fx:id="anc" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.DashboardController">
    <children>
-      <Pane fx:id="pane" layoutY="-7.0" prefHeight="98.0" prefWidth="1017.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pane1" layoutX="-9.0" layoutY="-9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" layoutX="37.0" layoutY="61.0" onMouseClicked="#switchToSideBar" size="30">
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-            </FontAwesomeIconView>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <effect>
-            <DropShadow />
-         </effect></Pane>
-      <HBox alignment="CENTER" layoutX="203.0" layoutY="370.0" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="370.0">
-         <children>
-            <GridPane alignment="CENTER" hgap="60.0" prefHeight="237.0" prefWidth="972.0" stylesheets="@../styles/style.css">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <Pane fx:id="pane" layoutX="9.0" layoutY="9.0" prefHeight="98.0" prefWidth="1017.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <HBox alignment="CENTER" layoutX="212.0" layoutY="379.0" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="370.0">
                <children>
-                  <Button fx:id="runscan" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToScan" prefHeight="270.0" prefWidth="327.0" styleClass="RunScanButton" stylesheets="@../styles/style.css" text="Run Scan" textAlignment="CENTER" textFill="#fcf0f0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <padding>
-                        <Insets top="100.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="analyze" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" text="Analyze" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <padding>
-                        <Insets top="100.0" />
-                     </padding>
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="updateDB" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="Upadate DB" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <padding>
-                        <Insets top="100.0" />
-                     </padding>
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-         </children>
-         <padding>
-            <Insets left="10.0" right="10.0" />
-         </padding>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="117.0" layoutY="110.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <SplitPane cache="true" prefHeight="202.0" prefWidth="963.0" style="-fx-effect: shadow;" styleClass="title" stylesheets="@../styles/style.css">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="715.0">
+                  <GridPane alignment="CENTER" hgap="60.0" prefHeight="237.0" prefWidth="972.0" stylesheets="@../styles/style.css">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <FontAwesomeIconView fill="WHITE" glyphName="DESKTOP" layoutX="59.0" layoutY="179.0" size="200" wrappingWidth="175.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="20.0" />
-                        <Text fill="WHITE" layoutX="289.0" layoutY="88.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Windows Vulnerability Scanner" textAlignment="CENTER" wrappingWidth="630.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="0.0">
+                        <Button fx:id="runscan" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToScan" prefHeight="270.0" prefWidth="327.0" styleClass="RunScanButton" stylesheets="@../styles/style.css" text="Run Scan" textAlignment="CENTER" textFill="#fcf0f0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
                            <font>
-                              <Font name="System Bold" size="52.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
-                        </Text>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets top="100.0" />
+                           </padding>
+                        </Button>
+                        <Button fx:id="analyze" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" text="Analyze" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets top="100.0" />
+                           </padding>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="updateDB" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="Upadate DB" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <graphic>
+                              <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets top="100.0" />
+                           </padding>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                      </children>
-                  </AnchorPane>
-              </items>
-            </SplitPane>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="box" alignment="CENTER" layoutX="126.0" layoutY="119.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <SplitPane cache="true" prefHeight="202.0" prefWidth="963.0" style="-fx-effect: shadow;" styleClass="title" stylesheets="@../styles/style.css">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="715.0">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="DESKTOP" layoutX="59.0" layoutY="179.0" size="200" wrappingWidth="175.0" AnchorPane.leftAnchor="59.0" AnchorPane.topAnchor="20.0" />
+                              <Text fill="WHITE" layoutX="289.0" layoutY="88.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Windows Vulnerability Scanner" textAlignment="CENTER" wrappingWidth="630.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="0.0">
+                                 <font>
+                                    <Font name="System Bold" size="52.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <VBox fx:id="side" layoutX="6.0" layoutY="10.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      </AnchorPane>
+      <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" onMouseClicked="#switchToSideBar" size="30" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <VBox fx:id="side" layoutX="6.0" layoutY="10.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="234.0" prefWidth="266.0">
                <children>
@@ -187,7 +190,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Pane>
-            <Button id="BUTTON" fx:id="homeButton" onMouseClicked="#switchToDash" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
+            <Button id="BUTTON" fx:id="homeButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#switchToDash" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -217,7 +220,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="analyticsButton" onMouseClicked="#switchToHistory" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
+            <Button fx:id="analyticsButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>

@@ -17,104 +17,106 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ScanController">
+<AnchorPane stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ScanController">
    <children>
-      <Pane fx:id="pane" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pane3" layoutX="-9.0" layoutY="-9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" layoutX="37.0" layoutY="61.0" size="30">
+            <Pane fx:id="pane" layoutX="9.0" layoutY="9.0" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <HBox layoutX="59.0" layoutY="288.0" prefHeight="330.0" prefWidth="1024.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="279.0">
+               <children>
+                  <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="topbar" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <padding>
+                        <Insets topRightBottomLeft="10" />
+                     </padding>
+                     <children>
+                        <Label text="Select Application to Scan" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="160.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/icons8-scan-64.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="11.0" layoutY="-47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select application/applications which you want to scan, You can scan single application or multiple with this option." wrappingWidth="550.0" y="282.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="frame" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <padding>
+                        <Insets topRightBottomLeft="10" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="TOP" text="Multiple ApplicationScan" textAlignment="JUSTIFY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/icons8-scan-64.png" />
+                           </image>
+                        </ImageView>
+                        <Text id="full-right-scan-text" accessibleRole="IMAGE_VIEW" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="With this option you can scan more applications and it is automated you don't have to seletct application to scan" textAlignment="JUSTIFY" textOrigin="BOTTOM" wrappingWidth="550.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+            <Text fill="WHITE" layoutX="166.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Scan Option" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Button id="select_App_Button" alignment="CENTER" layoutX="409.0" layoutY="730.7999877929688" mnemonicParsing="false" onMouseClicked="#switchToApps" stylesheets="@../styles/style.css" text="Select App" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="400.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
                <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
-            </FontAwesomeIconView>
+            </Button>
+            <Button id="select_App_Button" alignment="CENTER" layoutX="820.2000122070312" layoutY="730.7999877929688" mnemonicParsing="false" onMouseClicked="#switchToReport" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
-      <HBox layoutX="28.0" layoutY="279.0" prefHeight="330.0" prefWidth="1024.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="279.0">
-         <children>
-            <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="topbar" HBox.hgrow="ALWAYS">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <padding>
-                  <Insets topRightBottomLeft="10" />
-               </padding>
-               <children>
-                  <Label text="Select Application to Scan" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="160.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/icons8-scan-64.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="11.0" layoutY="-47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select application/applications which you want to scan, You can scan single application or multiple with this option." wrappingWidth="550.0" y="282.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-               <HBox.margin>
-                  <Insets right="30.0" />
-               </HBox.margin>
-            </VBox>
-            <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="300.0" prefWidth="480.0" spacing="60" styleClass="frame" HBox.hgrow="ALWAYS">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <padding>
-                  <Insets topRightBottomLeft="10" />
-               </padding>
-               <children>
-                  <Label alignment="CENTER" contentDisplay="TOP" text="Multiple ApplicationScan" textAlignment="JUSTIFY" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/icons8-scan-64.png" />
-                     </image>
-                  </ImageView>
-                  <Text id="full-right-scan-text" accessibleRole="IMAGE_VIEW" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="With this option you can scan more applications and it is automated you don't have to seletct application to scan" textAlignment="JUSTIFY" textOrigin="BOTTOM" wrappingWidth="550.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
-         </children>
-         <padding>
-            <Insets left="30.0" right="30.0" />
-         </padding>
-      </HBox>
-      <Text fill="WHITE" layoutX="166.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Scan Option">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Text>
-      <Button id="select_App_Button" alignment="CENTER" layoutX="225.0" layoutY="609.0" mnemonicParsing="false" onMouseClicked="#switchToApps" stylesheets="@../styles/style.css" text="Select App" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="400.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
+      </AnchorPane>
+      <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" size="30" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0">
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
-      </Button>
-      <Button id="select_App_Button" alignment="CENTER" layoutX="706.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#switchToReport" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+      </FontAwesomeIconView>
       <VBox fx:id="side" layoutX="6.0" layoutY="10.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="234.0" prefWidth="266.0">
@@ -140,7 +142,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Pane>
-            <Button id="BUTTON" fx:id="homeButton" onMouseClicked="#switchToDash" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
+            <Button id="BUTTON" fx:id="homeButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#switchToDash" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -170,7 +172,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="analyticsButton" onMouseClicked="#switchToHistory" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
+            <Button fx:id="analyticsButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>

@@ -13,7 +13,7 @@ public class Main extends Application {
         new Coordinator();
 
         stage.setTitle("Windows Vulnerability Scanner");
-        stage.setFullScreen(true);
+        //stage.setFullScreen(true);
         stage.setScene(Coordinator.dashScene);
         //stage.setMaximized(true);
         stage.show();

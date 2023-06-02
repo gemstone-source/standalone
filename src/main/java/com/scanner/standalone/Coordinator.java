@@ -17,25 +17,25 @@ public class Coordinator {
 
     private void createDashScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dashboard.fxml"));
-        dashScene = new Scene(fxmlLoader.load());
+        dashScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
     private void createHistoryScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/history.fxml"));
-        historyScene = new Scene(fxmlLoader.load());
+        historyScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
 
     private void createScanScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/scan.fxml"));
-        scanScene = new Scene(fxmlLoader.load());
+        scanScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
 
     private void createAppScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/apps.fxml"));
-        appScene = new Scene(fxmlLoader.load());
+        appScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
     private void createReportScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/report.fxml"));
-        reportScene = new Scene(fxmlLoader.load());
+        reportScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
     private void createSideBarScene() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/sideBar.fxml"));

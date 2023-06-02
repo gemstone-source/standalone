@@ -17,117 +17,121 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ReportController">
+<AnchorPane stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ReportController">
    <children>
-      <Pane fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pane4" layoutX="-9.0" layoutY="-9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" layoutX="37.0" layoutY="61.0" size="30">
-               <cursor>
-                  <Cursor fx:constant="CLOSED_HAND" />
-               </cursor>
-            </FontAwesomeIconView>
-            <Text fill="WHITE" layoutX="518.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORT">
-               <font>
-                  <Font name="Garamond" size="29.0" />
-               </font>
-            </Text>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
-      <HBox layoutX="31.0" layoutY="116.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1049.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
-         <children>
-            <VBox id="full-right-scan" fx:id="pane111" alignment="CENTER" layoutX="611.0" layoutY="20.0" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
+            <Pane fx:id="pane" layoutX="9.0" layoutY="9.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
+                  <Text fill="WHITE" layoutX="730.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REPORT">
+                     <font>
+                        <Font name="Garamond" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <HBox layoutX="9.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1049.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+               <children>
+                  <VBox id="full-right-scan" fx:id="pane111" alignment="CENTER" layoutX="611.0" layoutY="20.0" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox VBox.vgrow="ALWAYS">
+                        <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
                            <children>
-                              <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="571.0" HBox.hgrow="ALWAYS">
+                              <HBox VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Label layoutX="29.0" layoutY="14.0" minWidth="-Infinity" prefHeight="38.0" prefWidth="259.0" text="Vulnerabilities found" wrapText="true">
+                                    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="571.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label layoutX="29.0" layoutY="14.0" minWidth="-Infinity" prefHeight="38.0" prefWidth="259.0" text="Vulnerabilities found" wrapText="true">
+                                             <font>
+                                                <Font name="Georgia Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Line endX="456.0" layoutX="101.0" layoutY="71.0" startX="-87.0" stroke="WHITE" />
+                                          <Line endX="446.0" endY="30.0" layoutX="111.0" layoutY="81.0" startX="-96.0" startY="30.0" stroke="WHITE" />
+                                          <Line endX="436.0" endY="60.0" layoutX="121.0" layoutY="91.0" startX="-107.0" startY="60.0" stroke="WHITE" />
+                                          <Line endX="423.0" endY="94.0" layoutX="131.0" layoutY="101.0" startX="-117.0" startY="94.0" stroke="WHITE" />
+                                          <Line endX="412.0" endY="138.0" layoutX="141.0" layoutY="111.0" startX="-124.0" startY="138.0" stroke="WHITE" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox id="partial-scan" fx:id="pane12" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <Pane prefHeight="299.0" prefWidth="572.0">
+                                 <children>
+                                    <Label layoutX="26.0" layoutY="21.0" minWidth="-Infinity" prefHeight="38.0" prefWidth="346.0" text="CVE Name For vulnerable App" wrapText="true">
                                        <font>
                                           <Font name="Georgia Bold" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Line endX="456.0" layoutX="101.0" layoutY="71.0" startX="-87.0" stroke="WHITE" />
-                                    <Line endX="446.0" endY="30.0" layoutX="111.0" layoutY="81.0" startX="-96.0" startY="30.0" stroke="WHITE" />
-                                    <Line endX="436.0" endY="60.0" layoutX="121.0" layoutY="91.0" startX="-107.0" startY="60.0" stroke="WHITE" />
-                                    <Line endX="423.0" endY="94.0" layoutX="131.0" layoutY="101.0" startX="-117.0" startY="94.0" stroke="WHITE" />
-                                    <Line endX="412.0" endY="138.0" layoutX="141.0" layoutY="111.0" startX="-124.0" startY="138.0" stroke="WHITE" />
+                                    <BorderPane layoutX="41.0" layoutY="85.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: red; -fx-background-radius: 30px;" />
+                                    <BorderPane layoutX="14.0" layoutY="143.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #AA4545; -fx-background-radius: 30px;" />
+                                    <BorderPane layoutX="41.0" layoutY="199.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #C56A26; -fx-background-radius: 30px;" />
+                                    <BorderPane layoutX="41.0" layoutY="240.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #FFB900; -fx-background-radius: 30px;" />
                                  </children>
                               </Pane>
                            </children>
-                        </HBox>
+                        </VBox>
                      </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
                   </VBox>
-                  <VBox id="partial-scan" fx:id="pane12" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
+                  <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
                      <effect>
                         <DropShadow />
                      </effect>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
                      <children>
-                        <Pane prefHeight="299.0" prefWidth="572.0">
+                        <Pane prefHeight="612.0" prefWidth="462.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Label layoutX="26.0" layoutY="21.0" minWidth="-Infinity" prefHeight="38.0" prefWidth="346.0" text="CVE Name For vulnerable App" wrapText="true">
+                              <Label alignment="TOP_LEFT" layoutX="1.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="462.0" text="Alerts" wrapText="true">
                                  <font>
                                     <Font name="Georgia Bold" size="20.0" />
                                  </font>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
                               </Label>
-                              <BorderPane layoutX="41.0" layoutY="85.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: red; -fx-background-radius: 30px;" />
-                              <BorderPane layoutX="14.0" layoutY="143.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #AA4545; -fx-background-radius: 30px;" />
-                              <BorderPane layoutX="41.0" layoutY="199.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #C56A26; -fx-background-radius: 30px;" />
-                              <BorderPane layoutX="41.0" layoutY="240.0" prefHeight="9.0" prefWidth="386.0" style="-fx-border-radius: 30px; -fx-background-color: #FFB900; -fx-background-radius: 30px;" />
+                              <Line endX="361.0" layoutX="101.0" layoutY="71.0" startX="-71.0" stroke="WHITE" strokeType="INSIDE" />
+                              <Line endX="344.0" endY="30.0" layoutX="111.0" layoutY="81.0" nodeOrientation="LEFT_TO_RIGHT" startX="-100.0" startY="30.0" stroke="WHITE" />
+                              <Line endX="332.0" endY="60.0" layoutX="121.0" layoutY="91.0" startX="-108.0" startY="60.0" stroke="WHITE" />
+                              <Line endX="320.0" endY="94.0" layoutX="131.0" layoutY="101.0" startX="-117.0" startY="94.0" stroke="WHITE" />
+                              <Line endX="296.5" endY="138.0" layoutX="141.0" layoutY="111.0" startX="-109.0" startY="138.0" stroke="WHITE" />
                            </children>
                         </Pane>
                      </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
                   </VBox>
                </children>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </VBox>
-            <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <children>
-                  <Pane prefHeight="612.0" prefWidth="462.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" layoutX="1.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="462.0" text="Alerts" wrapText="true">
-                           <font>
-                              <Font name="Georgia Bold" size="20.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Line endX="361.0" layoutX="101.0" layoutY="71.0" startX="-71.0" stroke="WHITE" strokeType="INSIDE" />
-                        <Line endX="344.0" endY="30.0" layoutX="111.0" layoutY="81.0" nodeOrientation="LEFT_TO_RIGHT" startX="-100.0" startY="30.0" stroke="WHITE" />
-                        <Line endX="332.0" endY="60.0" layoutX="121.0" layoutY="91.0" startX="-108.0" startY="60.0" stroke="WHITE" />
-                        <Line endX="320.0" endY="94.0" layoutX="131.0" layoutY="101.0" startX="-117.0" startY="94.0" stroke="WHITE" />
-                        <Line endX="296.5" endY="138.0" layoutX="141.0" layoutY="111.0" startX="-109.0" startY="138.0" stroke="WHITE" />
-                     </children>
-                  </Pane>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </VBox>
+            </HBox>
          </children>
-      </HBox>
+      </AnchorPane>
+      <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" size="30" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </FontAwesomeIconView>
       <VBox fx:id="side" layoutX="6.0" layoutY="10.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="234.0" prefWidth="266.0">
@@ -153,7 +157,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Pane>
-            <Button id="BUTTON" fx:id="homeButton" onMouseClicked="#switchToDash" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
+            <Button id="BUTTON" fx:id="homeButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#switchToDash" prefHeight="63.0" prefWidth="266.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="HOME" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -183,7 +187,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="analyticsButton" onMouseClicked="#switchToHistory" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
+            <Button fx:id="analyticsButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
