@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.AppsController">
+   <children>
+      <AnchorPane fx:id="pane6" layoutX="-9.0" layoutY="-9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="pane" layoutX="9.0" layoutY="9.0" prefHeight="98.0" prefWidth="1080.0" styleClass="topbar" stylesheets="@../styles/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
+            <HBox alignment="CENTER" layoutX="9.0" layoutY="109.0" prefHeight="618.0" prefWidth="1080.0" style="-fx-background-color: #2c3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="109.0">
+               <children>
+                  <ScrollPane style="-fx-border-color: #2c3341;" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <content>
+                        <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" spacing="60" styleClass="frame">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1576.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets left="87.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1481.0">
+                                       <children>
+                                          <Label prefHeight="18.0" prefWidth="50.0" text="Label" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" size="30" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0">
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+   </children>
+</AnchorPane>
