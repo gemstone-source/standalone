@@ -1,6 +1,9 @@
 package com.scanner.standalone.Controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.scanner.standalone.Apps;
 import com.scanner.standalone.Coordinator;
+import com.scanner.standalone.Data;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -10,10 +13,15 @@ import javafx.scene.layout.Pane;
         import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AppsController implements Initializable {
+    ObjectMapper mapper = new ObjectMapper();
 
     @FXML
     private Pane pane;
@@ -68,5 +76,11 @@ public class AppsController implements Initializable {
                 side.setVisible(false);
             });
         });
+    }
+    public Data[] app_info() throws IOException {
+        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json");
+        Data[] apps = mapper.readValue(jsonFile, Data[].class);
+
+        return apps;
     }
 }
