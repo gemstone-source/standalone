@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1643.0" spacing="150.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app_listCOntroller">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1643.0" spacing="150.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ApplicationsListController">
    <children>
       <Label fx:id="app_name" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="175.0" text="VLC" HBox.hgrow="ALWAYS">
          <font>
@@ -35,6 +35,6 @@
       <Button fx:id="app_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="58.0" text="Scan" />
    </children>
    <padding>
-      <Insets left="300.0" />
+      <Insets right="300.0" />
    </padding>
 </HBox>

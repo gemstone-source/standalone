@@ -7,8 +7,10 @@ import com.scanner.standalone.Data;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
         import javafx.scene.layout.VBox;
 import javafx.util.Duration;
@@ -76,7 +78,27 @@ public class AppsController implements Initializable {
                 side.setVisible(false);
             });
         });
+
+        // Loop for loading dynamic applications
+        try {
+            Data[] data = app_info();
+            for(int i=0; i< data.length; i++){
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/scanner/standalone/fxml/app_list.fxml"));
+
+                HBox hbox = fxmlLoader.load();
+                ApplicationsListController controller = fxmlLoader.getController();
+                controller.setData(data[i]);
+
+                pane11.getChildren().add(hbox);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
+
+    // Declaration of json file which stores user applications.
     public Data[] app_info() throws IOException {
         File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json");
         Data[] apps = mapper.readValue(jsonFile, Data[].class);

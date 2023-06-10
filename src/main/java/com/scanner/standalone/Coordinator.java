@@ -30,7 +30,7 @@ public class Coordinator {
     }
 
     private void createAppScene() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/apps.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/applications.fxml"));
         appScene = new Scene(fxmlLoader.load(),1434.4,833.6);
     }
     private void createReportScene() throws IOException {
