@@ -8,7 +8,7 @@
 
 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1643.0" spacing="150.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ApplicationsListController">
    <children>
-      <Label fx:id="app_name" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="175.0" text="VLC" HBox.hgrow="ALWAYS">
+      <Label fx:id="app_name" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="322.0" text="VLC" HBox.hgrow="ALWAYS">
          <font>
             <Font size="18.0" />
          </font>
@@ -16,7 +16,7 @@
             <Insets />
          </HBox.margin>
       </Label>
-      <Label fx:id="app_version" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="191.0" text="3.2.0" HBox.hgrow="ALWAYS">
+      <Label fx:id="app_version" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="274.0" text="3.2.0" HBox.hgrow="ALWAYS">
          <font>
             <Font size="18.0" />
          </font>
@@ -32,7 +32,10 @@
             <Insets />
          </HBox.margin>
       </Label>
-      <Button fx:id="app_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="58.0" text="Scan" />
+      <Button fx:id="app_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: #228B22;" text="Scan" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
    <padding>
       <Insets right="300.0" />
