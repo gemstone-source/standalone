@@ -8,6 +8,7 @@ import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -15,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+import com.google.common.eventbus.EventBus;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,6 +53,10 @@ public class ScanController implements Initializable {
     private VBox side;
 
     @FXML
+    private ReportController reportController;
+
+
+    @FXML
     protected void switchToApps() {
         Coordinator.stage.setScene(Coordinator.appScene);
     }
@@ -66,6 +72,7 @@ public class ScanController implements Initializable {
     void switchToDash() {
         Coordinator.stage.setScene(Coordinator.dashScene);
     }
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         side.setVisible(false);
 
@@ -96,37 +103,21 @@ public class ScanController implements Initializable {
                 side.setVisible(false);
             });
         });
+    }
+    @FXML
+    void loadReportController() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
+            AnchorPane reportPane = fxmlLoader.load();
 
-scan_multiple.setOnMouseClicked(event -> {
-    // Loop for loading dynamic applications
-    try {
-        ReportController repControl = new ReportController();
-        Coordinator coordinator = new Coordinator();
-        coordinator.createReportScene();
-        List<Results> data = results();
-        for(int i=0; i< data.size(); i++){
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/com/scanner/standalone/fxml/vuln_list.fxml"));
+            // Create a new scene with the loaded FXML
+            Scene reportScene = new Scene(reportPane);
 
-            HBox hbox = fxmlLoader.load();
-            ResultListController controller = fxmlLoader.getController();
-            controller.setData(data.get(i));
-
-            ReportController.vulnerabilitiesFound.getChildren().add(hbox);
+            // Set the new scene on the stage
+            Coordinator.stage.setScene(reportScene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        throw new RuntimeException(e);
     }
-});
-    }
-
-    public List<Results> results() throws IOException {
-        Apps apps = new Apps();
-
-        List<Results> result1 = apps.test();
-
-        return result1;
-    }
-
 }
 

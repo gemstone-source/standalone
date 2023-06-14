@@ -67,23 +67,23 @@
                                                             <children>
                                                                 <Label prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="Item">
                                                                     <font>
-                                                                        <Font size="20.0" />
+                                                                        <Font name="Georgia" size="20.0" />
                                                                     </font>
                                                                     <HBox.margin>
                                                                         <Insets left="25.0" top="5.0" />
                                                                     </HBox.margin>
                                                                 </Label>
-                                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="Severity Score">
+                                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="App Version">
                                                                     <font>
-                                                                        <Font size="20.0" />
+                                                                        <Font name="Georgia" size="20.0" />
                                                                     </font>
                                                                     <HBox.margin>
                                                                         <Insets />
                                                                     </HBox.margin>
                                                                 </Label>
-                                                                <Label prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="Installed Date">
+                                                                <Label prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="Scan Date">
                                                                     <font>
-                                                                        <Font size="20.0" />
+                                                                        <Font name="Georgia" size="20.0" />
                                                                     </font>
                                                                     <HBox.margin>
                                                                         <Insets left="10.0" top="5.0" />
@@ -93,34 +93,6 @@
                                                             <VBox.margin>
                                                                 <Insets bottom="15.0" />
                                                             </VBox.margin>
-                                                        </HBox>
-                                                        <HBox prefHeight="45.0" prefWidth="520.0" spacing="100.0">
-                                                            <children>
-                                                                <Label prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="VLC">
-                                                                    <font>
-                                                                        <Font size="20.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets left="25.0" top="5.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="High">
-                                                                    <font>
-                                                                        <Font size="20.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Label prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="13-06-2023">
-                                                                    <font>
-                                                                        <Font size="20.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets left="10.0" top="5.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                            </children>
                                                         </HBox>
                                                     </children>
                                                 </VBox>
@@ -138,7 +110,7 @@
                                     <children>
                                         <ScrollPane prefHeight="338.0" prefWidth="700.0">
                                             <content>
-                                                <VBox fx:id="rank" prefHeight="338.0" prefWidth="691.0">
+                                                <VBox fx:id="rank" prefHeight="338.0" prefWidth="691.0" spacing="10.0">
                                                     <children>
                                                         <HBox prefHeight="40.0" prefWidth="520.0">
                                                             <children>
@@ -148,34 +120,6 @@
                                                                     </font>
                                                                     <HBox.margin>
                                                                         <Insets left="25.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                            </children>
-                                                        </HBox>
-                                                        <HBox prefHeight="45.0" prefWidth="520.0" spacing="100.0">
-                                                            <children>
-                                                                <Label prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="Application Name">
-                                                                    <font>
-                                                                        <Font name="System Bold" size="16.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets left="25.0" top="5.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="Application Version">
-                                                                    <font>
-                                                                        <Font name="System Bold" size="16.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Label prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="Installed Date">
-                                                                    <font>
-                                                                        <Font name="System Bold" size="16.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets left="10.0" top="5.0" />
                                                                     </HBox.margin>
                                                                 </Label>
                                                             </children>
@@ -201,7 +145,7 @@
                             <children>
                                 <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="696.0">
                                     <content>
-                                        <VBox prefHeight="338.0" prefWidth="691.0">
+                                        <VBox fx:id="alert" prefHeight="338.0" prefWidth="691.0">
                                             <children>
                                                 <HBox prefHeight="40.0" prefWidth="520.0">
                                                     <children>

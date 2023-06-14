@@ -14,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+import com.google.common.eventbus.Subscribe;
+import com.google.common.eventbus.EventBus;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,6 +41,9 @@ public class ReportController implements Initializable {
     private VBox pane12;
 
     @FXML
+    private VBox rank;
+
+    @FXML
     private FontAwesomeIconView sidebutton;
     @FXML
 
@@ -48,8 +53,7 @@ public class ReportController implements Initializable {
     private VBox side;
 
     @FXML
-
-    public static VBox vulnerabilitiesFound;
+    private VBox  vulnerabilitiesFound;
     @FXML
     void switchToHistory() {
         Coordinator.stage.setScene(Coordinator.historyScene);
@@ -90,9 +94,33 @@ public class ReportController implements Initializable {
             });
         });
 
+        // Loop for loading dynamic applications
+        try {
+            List<Results> data = results();
+            for(int i=0; i< data.size(); i++){
+                FXMLLoader fxmlLoader = new FXMLLoader();
 
+                // Found Vulnerability Pane
+                fxmlLoader.setLocation(getClass().getResource("/com/scanner/standalone/fxml/vuln_list.fxml"));
+
+                HBox hbox = fxmlLoader.load();
+                ResultListController controller = fxmlLoader.getController();
+                controller.setData(data.get(i));
+                vulnerabilitiesFound.getChildren().add(hbox);
+
+                // CVE Description Pane
+                FXMLLoader fxmlLoader1 = new FXMLLoader();
+                fxmlLoader1.setLocation(getClass().getResource("/com/scanner/standalone/fxml/cve_list.fxml"));
+
+                VBox vbox = fxmlLoader1.load();
+                RankListController controller1 = fxmlLoader1.getController();
+                controller1.setData(data.get(i));
+                rank.getChildren().add(vbox);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-
     public List<Results> results() throws IOException {
         Apps apps = new Apps();
 

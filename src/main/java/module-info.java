@@ -8,6 +8,7 @@ module com.scanner.standalone {
     requires json.path;
     requires com.fasterxml.jackson.databind;
     requires maven.artifact;
+    requires com.google.common;
 
     opens com.scanner.standalone to javafx.fxml;
     exports com.scanner.standalone;

@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="app_name" prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="VLC">
          <font>
-            <Font size="20.0" />
+            <Font name="Georgia" size="20.0" />
          </font>
          <HBox.margin>
             <Insets left="25.0" top="5.0" />

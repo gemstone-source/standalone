@@ -102,7 +102,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button id="select_App_Button" fx:id="scan_multiple" alignment="CENTER" layoutX="820.2000122070312" layoutY="730.7999877929688" mnemonicParsing="false" onMouseClicked="#switchToReport" text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
+            <Button id="select_App_Button" fx:id="scan_multiple" onAction="#loadReportController" alignment="CENTER" layoutX="820.2000122070312" layoutY="730.7999877929688" mnemonicParsing="false"  text="Start Scan" textFill="WHITE" AnchorPane.bottomAnchor="68.0" AnchorPane.rightAnchor="400.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

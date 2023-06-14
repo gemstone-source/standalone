@@ -9,22 +9,20 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ResultListController implements Initializable {
+public class RankListController implements Initializable {
 
     @FXML
-    private Label app_name;
+    private Label cve;
 
     @FXML
-    private Label date;
+    private Label description;
 
-    @FXML
-    private Label severity;
 
     public void setData(Results data){
-        // Vulnerability Found Pane
-        app_name.setText(data.getItem());
-        date.setText(data.getInstallDate());
-        severity.setText(data.getSeverity());
+
+        // CVE Pane
+        description.setText(data.getDescription());
+        cve.setText(data.getCveid());
     }
 
     @Override
