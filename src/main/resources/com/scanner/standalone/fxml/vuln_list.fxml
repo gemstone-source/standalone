@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="45.0" prefWidth="659.0" spacing="100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.ResultListController">
+   <children>
+      <Label fx:id="app_name" prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="VLC">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="25.0" top="5.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="severity" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="High">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="date" prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="13-06-2023">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </HBox.margin>
+      </Label>
+   </children>
+</HBox>

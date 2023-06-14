@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="633.0" style="-fx-border-radius: 50;" stylesheets="@side_pannel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Contollers.SideBarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="633.0" style="-fx-border-radius: 50;" stylesheets="@../styles/side_pannel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.SideBarController">
     <children>
         <VBox fx:id="side" layoutX="-4.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
