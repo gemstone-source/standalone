@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="app_name" prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="VLC">
          <font>
-            <Font name="Georgia" size="20.0" />
+            <Font name="Georgia" size="18.0" />
          </font>
          <HBox.margin>
             <Insets left="25.0" top="5.0" />
@@ -17,7 +17,7 @@
       </Label>
       <Label fx:id="severity" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="High">
          <font>
-            <Font size="20.0" />
+            <Font name="Georgia" size="18.0" />
          </font>
          <HBox.margin>
             <Insets />
@@ -25,7 +25,7 @@
       </Label>
       <Label fx:id="date" prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="13-06-2023">
          <font>
-            <Font size="20.0" />
+            <Font name="Georgia" size="18.0" />
          </font>
          <HBox.margin>
             <Insets left="10.0" top="5.0" />

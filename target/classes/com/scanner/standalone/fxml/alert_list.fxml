@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="690.0" spacing="100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.AlertListController">
+   <children>
+      <Label fx:id="alertApp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="Google Chrome" HBox.hgrow="ALWAYS">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="25.0" />
+         </HBox.margin>
+      </Label>
+   </children>
+</HBox>

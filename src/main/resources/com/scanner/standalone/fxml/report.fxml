@@ -35,21 +35,18 @@
                         <DropShadow />
                     </effect>
                 </Pane>
-                <HBox layoutX="9.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1049.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
-                    <children>
-                        <VBox id="full-right-scan" fx:id="pane111" alignment="CENTER" layoutX="611.0" layoutY="20.0" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
-                            <children>
-                                <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
+            <VBox layoutX="-9.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1049.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+               <children>
+                  <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                                <VBox id="partial-scan" fx:id="pane1" alignment="CENTER" prefHeight="295.0" prefWidth="691.0" styleClass="topbar" HBox.hgrow="ALWAYS">
                                     <effect>
                                         <DropShadow />
                                     </effect>
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
                                     <children>
                                         <ScrollPane hbarPolicy="NEVER" prefHeight="338.0" prefWidth="700.0">
                                             <content>
-                                                <VBox fx:id="vulnerabilitiesFound" prefHeight="338.0" prefWidth="691.0">
+                                                <VBox fx:id="vulnerabilitiesFound" prefHeight="295.0" prefWidth="691.0">
                                                     <children>
                                                         <HBox prefHeight="40.0" prefWidth="520.0">
                                                             <children>
@@ -62,6 +59,9 @@
                                                                     </HBox.margin>
                                                                 </Label>
                                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
                                                         </HBox>
                                                         <HBox prefHeight="45.0" prefWidth="520.0" spacing="100.0">
                                                             <children>
@@ -91,7 +91,7 @@
                                                                 </Label>
                                                             </children>
                                                             <VBox.margin>
-                                                                <Insets bottom="15.0" />
+                                                                <Insets bottom="7.0" />
                                                             </VBox.margin>
                                                         </HBox>
                                                     </children>
@@ -99,102 +99,83 @@
                                             </content>
                                         </ScrollPane>
                                     </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
                                 </VBox>
-                                <VBox id="partial-scan" fx:id="pane12" alignment="CENTER" prefHeight="295.0" prefWidth="572.0" styleClass="topbar" VBox.vgrow="ALWAYS">
-                                    <effect>
-                                        <DropShadow />
-                                    </effect>
-                                    <VBox.margin>
-                                        <Insets top="10.0" />
-                                    </VBox.margin>
-                                    <children>
-                                        <ScrollPane prefHeight="338.0" prefWidth="700.0">
-                                            <content>
-                                                <VBox fx:id="rank" prefHeight="338.0" prefWidth="691.0" spacing="10.0">
-                                                    <children>
-                                                        <HBox prefHeight="40.0" prefWidth="520.0">
-                                                            <children>
-                                                                <Label prefHeight="36.0" prefWidth="338.0" style="-fx-text-fill: #ffffff;" text="CVE Name For Vulnerable app">
-                                                                    <font>
-                                                                        <Font name="Georgia Bold" size="20.0" />
-                                                                    </font>
-                                                                    <HBox.margin>
-                                                                        <Insets left="25.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                            </children>
-                                                        </HBox>
-                                                    </children>
-                                                </VBox>
-                                            </content>
-                                        </ScrollPane>
-                                    </children>
-                                </VBox>
-                            </children>
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </HBox.margin>
-                        </VBox>
-                        <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="582.0" prefWidth="515.0" styleClass="frame" HBox.hgrow="ALWAYS">
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </HBox.margin>
-                            <children>
-                                <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="696.0">
-                                    <content>
-                                        <VBox fx:id="alert" prefHeight="338.0" prefWidth="691.0">
-                                            <children>
-                                                <HBox prefHeight="40.0" prefWidth="520.0">
-                                                    <children>
-                                                        <Label prefHeight="36.0" prefWidth="590.0" style="-fx-text-fill: #E72834;" text="Alert - The Following applications should be updated">
-                                                            <font>
-                                                                <Font name="Georgia Bold" size="20.0" />
-                                                            </font>
-                                                            <HBox.margin>
-                                                                <Insets left="25.0" />
-                                                            </HBox.margin>
-                                                        </Label>
-                                                    </children>
-                                                </HBox>
-                                                <HBox prefHeight="45.0" prefWidth="520.0" spacing="100.0">
-                                                    <children>
-                                                        <Label prefHeight="36.0" prefWidth="144.0" style="-fx-text-fill: #cccccc;" text="Application Name">
-                                                            <font>
-                                                                <Font name="System Bold" size="16.0" />
-                                                            </font>
-                                                            <HBox.margin>
-                                                                <Insets left="25.0" top="5.0" />
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: #cccccc;" text="Application Version">
-                                                            <font>
-                                                                <Font name="System Bold" size="16.0" />
-                                                            </font>
-                                                            <HBox.margin>
-                                                                <Insets />
-                                                            </HBox.margin>
-                                                        </Label>
-                                                        <Label prefHeight="36.0" prefWidth="122.0" style="-fx-text-fill: #cccccc;" text="Installed Date">
-                                                            <font>
-                                                                <Font name="System Bold" size="16.0" />
-                                                            </font>
-                                                            <HBox.margin>
-                                                                <Insets left="10.0" top="5.0" />
-                                                            </HBox.margin>
-                                                        </Label>
-                                                    </children>
-                                                </HBox>
-                                            </children>
-                                        </VBox>
-                                    </content>
-                                </ScrollPane>
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
+                              <VBox id="full-right-scan" fx:id="pane11" alignment="CENTER" prefHeight="295.0" prefWidth="691.0" styleClass="frame" HBox.hgrow="ALWAYS">
+                                  <effect>
+                                      <DropShadow />
+                                  </effect>
+                                  <children>
+                                      <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="696.0" VBox.vgrow="ALWAYS">
+                                          <content>
+                                              <VBox fx:id="alert" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="690.0" spacing="7.0">
+                                                  <children>
+                                                      <HBox prefHeight="40.0" prefWidth="520.0">
+                                                          <children>
+                                                              <Label minWidth="-Infinity" prefHeight="36.0" prefWidth="568.0" style="-fx-text-fill: #E72834;" text="Alert - The Following application(s) should be updated">
+                                                                  <font>
+                                                                      <Font name="Georgia Bold" size="20.0" />
+                                                                  </font>
+                                                                  <HBox.margin>
+                                                                      <Insets left="25.0" />
+                                                                  </HBox.margin>
+                                                              </Label>
+                                                          </children>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                                      </HBox>
+                                                  </children>
+                                              </VBox>
+                                          </content>
+                                      </ScrollPane>
+                                  </children>
+                              </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                              <VBox fx:id="rank" minHeight="-Infinity" VBox.vgrow="ALWAYS">
+                                  <children>
+                                  <ScrollPane prefHeight="374.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="rank" spacing="7.0">
+                                 <children>
+                                                  <HBox prefHeight="40.0" prefWidth="520.0">
+                                                      <children>
+                                                          <Label prefHeight="36.0" prefWidth="338.0" style="-fx-text-fill: #ffffff;" text="CVE Name For Vulnerable app">
+                                                              <font>
+                                                                  <Font name="Georgia Bold" size="20.0" />
+                                                              </font>
+                                                              <HBox.margin>
+                                                                  <Insets left="25.0" />
+                                                              </HBox.margin>
+                                                          </Label>
+                                                      </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                                  </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                                  </ScrollPane>
+                                  </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                              </VBox>
+               </children>
+            </VBox>
             </children>
         </AnchorPane>
         <FontAwesomeIconView fx:id="sidebutton" accessibleRole="BUTTON" fill="WHITE" glyphName="BARS" size="30" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="50.0">

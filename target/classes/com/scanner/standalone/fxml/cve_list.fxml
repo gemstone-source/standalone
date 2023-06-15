@@ -5,19 +5,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="54.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.RankListController">
+<VBox prefHeight="54.0" prefWidth="691.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scanner.standalone.Controllers.RankListController">
    <children>
       <Label fx:id="cve" prefHeight="18.0" prefWidth="156.0" style="-fx-text-fill: #cccccc;" text="CVE-2021-25804">
          <font>
-            <Font name="Georgia" size="16.0" />
+            <Font name="Georgia" size="18.0" />
          </font>
          <VBox.margin>
             <Insets left="25.0" />
          </VBox.margin>
       </Label>
-      <Label fx:id="description" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="1300.0" style="-fx-text-fill: #cccccc;" text="Vulnerability : A buffer overflow vulnerability in the vlc_input_attachment_New component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.">
+      <Label fx:id="description" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="1550.0" style="-fx-text-fill: #cccccc;" text="Vulnerability : A buffer overflow vulnerability in the vlc_input_attachment_New component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.">
          <font>
-            <Font name="Georgia" size="15.0" />
+            <Font name="Georgia" size="17.0" />
          </font>
          <VBox.margin>
             <Insets left="25.0" />
