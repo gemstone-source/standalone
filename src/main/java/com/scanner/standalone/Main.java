@@ -20,6 +20,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        Fetch_applications fetchApplications = new Fetch_applications();
+        fetchApplications.fetch();
         launch();
     }
 }

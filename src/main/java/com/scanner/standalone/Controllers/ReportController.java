@@ -97,7 +97,8 @@ public class ReportController implements Initializable {
         // Loop for loading dynamic applications
         try {
             List<Results> data = results();
-            HashSet<String> uniqueValues = new HashSet<>();
+            HashSet<String> uniqueItems = new HashSet<>();
+            HashSet<String> uniqueCVE = new HashSet<>();
 
             for(int i=0; i< data.size(); i++){
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -109,29 +110,33 @@ public class ReportController implements Initializable {
                 FXMLLoader fxmlLoader1 = new FXMLLoader();
                 fxmlLoader1.setLocation(getClass().getResource("/com/scanner/standalone/fxml/cve_list.fxml"));
 
-                VBox vbox = fxmlLoader1.load();
-                RankListController controller1 = fxmlLoader1.getController();
-                controller1.setData(data.get(i));
-                rank.getChildren().add(vbox);
 
                 //Alerts
                 FXMLLoader fxmlLoader2 = new FXMLLoader();
                 fxmlLoader2.setLocation(getClass().getResource("/com/scanner/standalone/fxml/alert_list.fxml"));
 
-                if(uniqueValues.add(data.get(i).getItem())) {
-                    HBox alerts = fxmlLoader2.load();
-                    AlertListController controller2 = fxmlLoader2.getController();
-                    controller2.setData(data.get(i));
-                    alert.getChildren().add(alerts);
+                if(uniqueCVE.add(data.get(i).getCveid())) {
+                    //description
+                    VBox vbox = fxmlLoader1.load();
+                    RankListController controller1 = fxmlLoader1.getController();
+                    controller1.setData(data.get(i));
+                    rank.getChildren().add(vbox);
 
-                    //part of vulnerability found list
-                    HBox hbox = fxmlLoader.load();
-                    ResultListController controller = fxmlLoader.getController();
-                    controller.setData(data.get(i));
-                    vulnerabilitiesFound.getChildren().add(hbox);
+                    if (uniqueItems.add(data.get(i).getItem())) {
+                        // Set only unique alert item with no duplicates
+                        HBox alerts = fxmlLoader2.load();
+                        AlertListController controller2 = fxmlLoader2.getController();
+                        controller2.setData(data.get(i));
+                        alert.getChildren().add(alerts);
 
+                        //part of vulnerability found list
+                        HBox hbox = fxmlLoader.load();
+                        ResultListController controller = fxmlLoader.getController();
+                        controller.setData(data.get(i));
+                        vulnerabilitiesFound.getChildren().add(hbox);
+
+                    }
                 }
-
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -1,6 +1,7 @@
 package com.scanner.standalone.Controllers;
 
 import com.scanner.standalone.Coordinator;
+import com.scanner.standalone.Fetch_applications;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
@@ -46,6 +47,10 @@ public class DashboardController implements Initializable {
     @FXML
     void switchToScan() {
         Coordinator.stage.setScene(Coordinator.scanScene);
+    }
+    @FXML
+    void switchToApps() {
+        Coordinator.stage.setScene(Coordinator.appScene);
     }
     @FXML
     void switchToHistory() {

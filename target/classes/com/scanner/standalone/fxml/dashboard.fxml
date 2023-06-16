@@ -103,7 +103,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="updateDB" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="My Apps" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Button fx:id="myApps" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#switchToApps" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="My Apps" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <graphic>
                               <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
