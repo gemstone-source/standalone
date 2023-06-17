@@ -1,9 +1,6 @@
 package com.scanner.standalone.Controllers;
 
-import com.scanner.standalone.Apps;
-import com.scanner.standalone.Coordinator;
-import com.scanner.standalone.Data;
-import com.scanner.standalone.Results;
+import com.scanner.standalone.*;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -16,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.HashSet;
@@ -54,6 +52,8 @@ public class ReportController implements Initializable {
 
     @FXML
     private VBox  alert;
+    List<Results> result = new ArrayList<>();
+
     @FXML
     void switchToHistory() {
         Coordinator.stage.setScene(Coordinator.historyScene);
@@ -95,8 +95,13 @@ public class ReportController implements Initializable {
         });
 
         // Loop for loading dynamic applications
+
+    }
+    public void setData(List<Results> data){
+        result.addAll(data);
         try {
-            List<Results> data = results();
+            // ApplicationsListController applicationsListController = new ApplicationsListController();
+           // List<Results> data = getData();
             HashSet<String> uniqueItems = new HashSet<>();
             HashSet<String> uniqueCVE = new HashSet<>();
 
@@ -134,19 +139,16 @@ public class ReportController implements Initializable {
                         ResultListController controller = fxmlLoader.getController();
                         controller.setData(data.get(i));
                         vulnerabilitiesFound.getChildren().add(hbox);
-
                     }
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("Data received: " + result.get(0).getItem());
     }
-    public List<Results> results() throws IOException {
-        Apps apps = new Apps();
-
-        List<Results> result1 = apps.test();
-
-        return result1;
+    List<Results> getData(){
+        return result;
     }
+
 }
