@@ -4,11 +4,19 @@ module com.scanner.standalone {
 
     requires de.jensd.fx.glyphs.fontawesome;
     requires json.simple;
-    requires rest.assured;
-    requires json.path;
-    requires com.fasterxml.jackson.databind;
     requires maven.artifact;
     requires com.google.common;
+    //requires org.apache.commons.compress;
+    requires java.compiler;
+    requires com.fasterxml.jackson.annotation;
+    requires com.fasterxml.jackson.databind;
+    requires json.path;
+    requires com.sun.jna;
+    requires jdk.management;
+    requires org.apache.httpcomponents.httpcore;
+    requires org.apache.httpcomponents.httpclient;
+//    requires dependency.check.core;
+//    requires dependency.check.utils;
 
     opens com.scanner.standalone to javafx.fxml;
     exports com.scanner.standalone;

@@ -18,13 +18,13 @@ import java.util.Map;
 public class Fetch_applications {
     public  void fetch() {
         try {
-            Process process = Runtime.getRuntime().exec("powershell \"Get-ItemProperty HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName,DisplayVersion,InstallDate | Convertto-json |out-file 'C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json' \"");
+            Process process = Runtime.getRuntime().exec("powershell \"Get-ItemProperty HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName,DisplayVersion,InstallDate | Convertto-json |out-file '~\\Desktop\\Final-Year-Project\\standalone\\apps.json' \"");
             java.util.Scanner scanner = new java.util.Scanner(process.getInputStream()).useDelimiter("\\A");
             String result = scanner.hasNext() ? scanner.next() : "";
             System.out.println(result);
 
             //remove null values
-            File filePath = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json");
+            File filePath = new File("~\\Desktop\\Final-Year-Project\\standalone\\apps.json");
 
             try {
                 // Step 1: Read the JSON file and parse it into a JsonNode

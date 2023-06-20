@@ -7,8 +7,8 @@ import org.json.simple.parser.JSONParser;
 
 public class CompareJSONFiles {
     public static void main(String[] args) {
-        File folder1 = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone");
-        File folder2 = new File("C:\\Users\\hashghost\\Desktop\\cvelistV5-main\\cves\\2022\\4xxx");
+        File folder1 = new File("~\\Desktop\\Final-Year-Project\\standalone");
+        File folder2 = new File("~\\Desktop\\cvelistV5-main\\cves\\2022\\4xxx");
 
         // Traverse through folder 1 and find all JSON files
         for (File file1 : folder1.listFiles()) {

@@ -86,7 +86,7 @@
                                     </Label>
                                  </children>
                                  <padding>
-                                    <Insets left="50.0" right="355.0" />
+                                    <Insets left="50.0" right="350.0" />
                                  </padding>
                               </HBox>
                            </children>
