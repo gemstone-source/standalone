@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="fonts">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/main/resources/com/scanner/standalone/fonts" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/main/resources/com/scanner/standalone/fonts" recursive="false" />
+  </library>
+</component>
