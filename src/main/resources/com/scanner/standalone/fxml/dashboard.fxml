@@ -12,6 +12,7 @@
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -76,7 +77,7 @@
                               <Insets top="100.0" />
                            </padding>
                         </Button>
-                        <Button fx:id="analyze" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" text="Analyze" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                        <Button fx:id="analyze" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="270.0" prefWidth="327.0" styleClass="AnalyzeButton" stylesheets="@../styles/style.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                            <graphic>
                               <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
@@ -103,7 +104,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="myApps" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#switchToApps" mnemonicParsing="false" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="My Apps" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Button fx:id="myApps" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#switchToApps" prefHeight="270.0" prefWidth="327.0" styleClass="UpdateDB" stylesheets="@../styles/style.css" text="My Apps" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <graphic>
                               <ImageView fitHeight="73.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
@@ -131,8 +132,30 @@
                         <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                         <Circle fill="#2c3341" radius="64.0" stroke="#ffaa22" strokeType="INSIDE" strokeWidth="4.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                         <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <ImageView fitHeight="80.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../icons/history.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="125.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="#cccccc" strokeType="OUTSIDE" strokeWidth="0.0" text="History" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Georgia Bold" size="20.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="100.0" top="170.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <ImageView fitHeight="80.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../icons/applications.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="120.0" />
+                           </GridPane.margin>
+                        </ImageView>
                      </children>
                   </GridPane>
                </children>
@@ -165,19 +188,19 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </FontAwesomeIconView>
-      <VBox fx:id="side" layoutX="6.0" layoutY="10.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="side" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="234.0" prefWidth="266.0">
                <children>
                   <FontAwesomeIconView fill="#c8bcf6" glyphName="HOME" layoutX="23.0" layoutY="102.0" size="90" text="" wrappingWidth="72.0" />
-                  <Label layoutX="116.0" layoutY="24.0" prefHeight="47.0" prefWidth="72.0" text="WVS" textFill="WHITE">
+                  <Label layoutX="116.0" layoutY="24.0" prefHeight="47.0" prefWidth="89.0" text="WVS" textFill="WHITE">
                      <font>
-                        <Font name="Gill Sans MT Bold" size="27.0" />
+                        <Font name="Georgia Bold" size="30.0" />
                      </font>
                   </Label>
                   <Label graphicTextGap="9.0" layoutX="112.0" layoutY="70.0" prefHeight="37.0" prefWidth="89.0" text="Feel  Safe" textFill="WHITE">
                      <font>
-                        <Font name="MS Outlook" size="14.0" />
+                        <Font name="Georgia" size="20.0" />
                      </font>
                   </Label>
                   <TextField layoutX="30.0" layoutY="159.0" prefHeight="37.0" prefWidth="172.0" promptText="      search ........." style="-fx-background-color: #ffffff; -fx-border-radius: 50;">
@@ -202,7 +225,7 @@
                   </FontAwesomeIconView>
                </graphic>
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="Georgia Bold" size="15.0" />
                </font>
             </Button>
             <Button fx:id="inventoryButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="273.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="INVENTORY" textFill="WHITE">
@@ -217,7 +240,7 @@
                   </FontAwesomeIconView>
                </graphic>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Georgia Bold" size="15.0" />
                </font>
             </Button>
             <Button fx:id="analyticsButton" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#switchToHistory" prefHeight="61.0" prefWidth="279.0" styleClass="hover-button" stylesheets="@../styles/side_bar.css" text="ANALYTICS" textFill="WHITE">
@@ -232,7 +255,7 @@
                   </FontAwesomeIconView>
                </graphic>
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="Georgia Bold" size="15.0" />
                </font>
             </Button>
          </children>
