@@ -39,6 +39,9 @@ public class AppsController implements Initializable {
 
     @FXML
     private VBox side;
+
+    @FXML
+    private Pane popup;
     @FXML
     void switchToHistory() {
         Coordinator.stage.setScene(Coordinator.historyScene);
@@ -50,6 +53,7 @@ public class AppsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         side.setVisible(false);
+        popup.setVisible(false);
 
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), side);
         fadeTransition.setFromValue(1);
@@ -76,6 +80,7 @@ public class AppsController implements Initializable {
 
             fadeTransition1.setOnFinished(event1 -> {
                 side.setVisible(false);
+                popup.setVisible(false);
             });
         });
 
@@ -104,5 +109,19 @@ public class AppsController implements Initializable {
         Data[] apps = mapper.readValue(jsonFile, Data[].class);
 
         return apps;
+    }
+
+    public void setPopup(){
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), side);
+        fadeTransition.setFromValue(1);
+        fadeTransition.setToValue(0);
+        fadeTransition.play();
+
+        popup.setVisible(true);
+
+        FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), side);
+        fadeTransition1.setFromValue(0.15);
+        fadeTransition1.setToValue(1);
+        fadeTransition1.play();
     }
 }

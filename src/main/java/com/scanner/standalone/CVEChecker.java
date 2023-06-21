@@ -19,10 +19,9 @@ import java.util.List;
 public class CVEChecker {
     ObjectMapper mapper = new ObjectMapper();
     List<Results> outputs = new ArrayList<>();
-    public List<Results> libraries(String item) throws IOException {
+    public List<Results> libraries() throws IOException {
 
         CVEChecker cveChecker = new CVEChecker();
-        cveChecker.getLibraries(cveChecker.appName(item));
         DependencyData[] dependencyData = cveChecker.dep_info();
         // Application names and versions
 
@@ -34,13 +33,13 @@ public class CVEChecker {
 
             try {
                 HttpClient httpClient = HttpClients.createDefault();
-                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + encodeURLParameter(appName) + "%20" + encodeURLParameter(appVersion));
+                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + encodeURLParameter(appName) + encodeURLParameter(appVersion));/*+ encodeURLParameter(appVersion)*/
                 HttpResponse response = httpClient.execute(request);
 
                 if (response.getStatusLine().getStatusCode() == 200) {
                     String responseBody = EntityUtils.toString(response.getEntity());
                     System.out.println(responseBody);
-                    cveChecker.retrieveData(responseBody,appName,appVersion);
+                    outputs.addAll(cveChecker.retrieveData(responseBody,appName,appVersion));
                     // Parse the JSON response and extract the relevant information
                     // (application name, version, CVE ID, severity score)
                     // Update your code accordingly based on the structure of the API response
@@ -56,7 +55,8 @@ public class CVEChecker {
         }
         return outputs;
     }
-    public void retrieveData(String output,String lib,String version2) {
+    public List<Results> retrieveData(String output,String lib,String version2) {
+        List<Results> tray1 = new ArrayList<>();
         String json = output;
 
         try {
@@ -81,18 +81,20 @@ public class CVEChecker {
                     // Vulnerability Found Pane Results
                     result.setItem(lib);
                     result.setSeverity(String.valueOf(version2));
+                    result.setInstallDate(String.valueOf(LocalDate.now()));
 
                     // CVE Description(Rank) Pane
                     result.setCveid(cveId);
                     result.setDescription(descriptionValue);
 
 
-                    outputs.add(result);
+                    tray1.add(result);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return tray1;
     }
 
     public String appName(String item) {
@@ -103,10 +105,16 @@ public class CVEChecker {
     }
 
     public void getLibraries(String app) throws IOException {
-        Process process = Runtime.getRuntime().exec("powershell scripts/cool.ps1 "+app);
+        String scriptPath = "C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\scripts\\cool.ps1";
+        String[] command = {"powershell", "-File", scriptPath, app};
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
+        Process process = processBuilder.start();
+     //   Process process = Runtime.getRuntime().exec("powershell C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\scripts\\cool.ps1 "+app);
     }
     public DependencyData[] dep_info() throws IOException {
-        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependencies.json");
+//        CVEChecker cveChecker = new CVEChecker();
+//        cveChecker.getLibraries(cveChecker.appName(item));
+        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependancies.json");
         DependencyData[] depsData = mapper.readValue(jsonFile, DependencyData[].class);
 
         return depsData;

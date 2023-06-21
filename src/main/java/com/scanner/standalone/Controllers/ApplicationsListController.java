@@ -76,7 +76,12 @@ public class ApplicationsListController implements Initializable {
     @FXML
     void setLibrary_action() throws IOException {
         CVEChecker cveChecker = new CVEChecker();
-        result.addAll(cveChecker.libraries(app_name.getText()));
+        cveChecker.getLibraries(cveChecker.appName(app_name.getText()));
+        result.addAll(cveChecker.libraries());
+        if(result.isEmpty()){
+            AppsController appsController = new AppsController();
+            appsController.setPopup();
+        }
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));

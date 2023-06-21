@@ -19,9 +19,11 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Fetch_applications fetchApplications = new Fetch_applications();
         fetchApplications.fetch();
+     //   CVEChecker cveChecker = new CVEChecker();
+       // cveChecker.getLibraries("chrome.exe");
         launch();
     }
 }

@@ -108,9 +108,9 @@
                                       <DropShadow />
                                   </effect>
                                   <children>
-                                      <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="696.0" VBox.vgrow="ALWAYS">
+                                      <ScrollPane hbarPolicy="NEVER" prefHeight="338.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
                                           <content>
-                                              <VBox fx:id="alert" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="294.0" prefWidth="690.0" spacing="7.0">
+                                              <VBox fx:id="alert" prefHeight="294.0" prefWidth="690.0" spacing="7.0">
                                                   <children>
                                                       <HBox prefHeight="40.0" prefWidth="520.0">
                                                           <children>
