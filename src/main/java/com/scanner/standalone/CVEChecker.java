@@ -114,7 +114,7 @@ public class CVEChecker {
     public DependencyData[] dep_info() throws IOException {
 //        CVEChecker cveChecker = new CVEChecker();
 //        cveChecker.getLibraries(cveChecker.appName(item));
-        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependancies.json");
+        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependencies.json");
         DependencyData[] depsData = mapper.readValue(jsonFile, DependencyData[].class);
 
         return depsData;

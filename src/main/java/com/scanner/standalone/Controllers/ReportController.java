@@ -144,6 +144,7 @@ public class ReportController implements Initializable {
             throw new RuntimeException(e);
         }
         System.out.println("Data received: " + result.get(0).getItem());
+        result.clear();
     }
 //    List<Results> getData(){
 //        return result;
