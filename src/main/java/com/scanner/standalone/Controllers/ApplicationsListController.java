@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 public class ApplicationsListController implements Initializable {
     @FXML
     private Button app_action;
+    @FXML
+    private Button library_action;
 
     @FXML
     private Label app_date;
@@ -69,6 +71,29 @@ public class ApplicationsListController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+    }
+    @FXML
+    void setLibrary_action() throws IOException {
+        CVEChecker cveChecker = new CVEChecker();
+        result.addAll(cveChecker.libraries(app_name.getText()));
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
+            AnchorPane reportPane = fxmlLoader.load();
+
+            // Access the ReportController
+            ReportController reportController = fxmlLoader.getController();
+            reportController.setData(result);
+
+            // Create a new scene with the loaded FXML
+            Scene reportScene = new Scene(reportPane);
+
+            // Set the new scene on the stage
+            Coordinator.stage.setScene(reportScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

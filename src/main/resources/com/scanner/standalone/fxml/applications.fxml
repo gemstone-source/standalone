@@ -47,25 +47,28 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                            <children>
-                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1643.0" spacing="150.0" VBox.vgrow="ALWAYS">
+                              <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="1643.0" spacing="100.0" VBox.vgrow="ALWAYS">
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                                  <children>
-                                    <Label prefHeight="36.0" prefWidth="266.0" style="-fx-text-fill: #cccccc;" text="Application Name" HBox.hgrow="ALWAYS">
+                                    <Label prefHeight="36.0" prefWidth="314.0" style="-fx-text-fill: #cccccc;" text="Application Name" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Georgia Bold" size="20.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets />
                                        </HBox.margin>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
                                     </Label>
                                     <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="266.0" style="-fx-text-fill: #cccccc;" text="Application Version" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Georgia Bold" size="20.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets left="100.0" />
+                                          <Insets />
                                        </HBox.margin>
                                     </Label>
                                     <Label prefHeight="36.0" prefWidth="235.0" style="-fx-text-fill: #cccccc;" text="Installed Date">
@@ -73,10 +76,10 @@
                                           <Font name="Georgia Bold" size="20.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets />
+                                          <Insets left="100.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label prefHeight="36.0" prefWidth="138.0" style="-fx-text-fill: #cccccc;" text="Action">
+                                    <Label prefHeight="36.0" prefWidth="131.0" style="-fx-text-fill: #cccccc;" text="Scan">
                                        <font>
                                           <Font name="Georgia Bold" size="20.0" />
                                        </font>
@@ -86,7 +89,7 @@
                                     </Label>
                                  </children>
                                  <padding>
-                                    <Insets left="50.0" right="350.0" />
+                                    <Insets left="30.0" right="250.0" />
                                  </padding>
                               </HBox>
                            </children>
@@ -105,7 +108,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor>
       </FontAwesomeIconView>
-      <VBox fx:id="side" layoutX="16.0" layoutY="20.0" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="side" prefHeight="556.0" prefWidth="266.0" style="-fx-background-color: #2C3341;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="234.0" prefWidth="266.0">
                <children>

@@ -100,8 +100,6 @@ public class ReportController implements Initializable {
     public void setData(List<Results> data){
         result.addAll(data);
         try {
-            // ApplicationsListController applicationsListController = new ApplicationsListController();
-           // List<Results> data = getData();
             HashSet<String> uniqueItems = new HashSet<>();
             HashSet<String> uniqueCVE = new HashSet<>();
 

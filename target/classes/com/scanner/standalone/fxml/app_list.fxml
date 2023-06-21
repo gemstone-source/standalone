@@ -32,12 +32,25 @@
             <Insets />
          </HBox.margin>
       </Label>
-      <Button fx:id="app_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setApp_action" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: #228B22;" text="Scan" textFill="WHITE">
-         <font>
-            <Font name="Georgia Bold" size="12.0" />
-         </font></Button>
+      <HBox spacing="20.0">
+         <children>
+            <Button fx:id="app_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setApp_action" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: #228B22;" text="App" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="library_action" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setLibrary_action" prefHeight="23.0" prefWidth="67.0" style="-fx-background-color: #1F85DE;" text="Library" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets top="10.0" />
+         </HBox.margin>
+      </HBox>
    </children>
    <padding>
-      <Insets right="300.0" />
+      <Insets right="250.0" />
    </padding>
 </HBox>

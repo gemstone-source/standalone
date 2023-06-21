@@ -24,7 +24,7 @@ public class Fetch_applications {
             System.out.println(result);
 
             //remove null values
-            File filePath = new File("~\\Desktop\\Final-Year-Project\\standalone\\apps.json");
+            File filePath = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json");
 
             try {
                 // Step 1: Read the JSON file and parse it into a JsonNode

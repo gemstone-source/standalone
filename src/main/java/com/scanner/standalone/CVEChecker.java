@@ -8,31 +8,39 @@ import org.apache.http.util.EntityUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CVEChecker {
-    public static void main(String[] args) {
-        // Application names and versions
-        String[][] applications = {
-                {"vlc", "3.0.11"},
-                {"App2", "2.3"},
-                // Add more applications as needed
-        };
+    ObjectMapper mapper = new ObjectMapper();
+    List<Results> outputs = new ArrayList<>();
+    public List<Results> libraries(String item) throws IOException {
 
-        for (String[] app : applications) {
-            String appName = app[0];
-            String appVersion = app[1];
+        CVEChecker cveChecker = new CVEChecker();
+        cveChecker.getLibraries(cveChecker.appName(item));
+        DependencyData[] dependencyData = cveChecker.dep_info();
+        // Application names and versions
+
+
+        for (DependencyData app : dependencyData) {
+            String appName = cveChecker.getTrimmedString(app.getFileName());
+            String appVersion = app.getProductVersion();
+            System.out.println(encodeURLParameter(appName)+"%20"+encodeURLParameter(appVersion));
 
             try {
                 HttpClient httpClient = HttpClients.createDefault();
-                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + appName + "&version=" + appVersion);
+                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + encodeURLParameter(appName) + "%20" + encodeURLParameter(appVersion));
                 HttpResponse response = httpClient.execute(request);
 
                 if (response.getStatusLine().getStatusCode() == 200) {
                     String responseBody = EntityUtils.toString(response.getEntity());
                     System.out.println(responseBody);
-                    CVEChecker cveChecker = new CVEChecker();
-                    cveChecker.retrieveData(responseBody);
+                    cveChecker.retrieveData(responseBody,appName,appVersion);
                     // Parse the JSON response and extract the relevant information
                     // (application name, version, CVE ID, severity score)
                     // Update your code accordingly based on the structure of the API response
@@ -46,8 +54,9 @@ public class CVEChecker {
                 e.printStackTrace();
             }
         }
+        return outputs;
     }
-    public void retrieveData(String output) {
+    public void retrieveData(String output,String lib,String version2) {
         String json = output;
 
         try {
@@ -66,6 +75,19 @@ public class CVEChecker {
                     System.out.println("CVE ID: " + cveId);
                     System.out.println("Description: " + descriptionValue);
                     System.out.println();
+
+                    Results result = new Results();
+
+                    // Vulnerability Found Pane Results
+                    result.setItem(lib);
+                    result.setSeverity(String.valueOf(version2));
+
+                    // CVE Description(Rank) Pane
+                    result.setCveid(cveId);
+                    result.setDescription(descriptionValue);
+
+
+                    outputs.add(result);
                 }
             }
         } catch (Exception e) {
@@ -73,7 +95,7 @@ public class CVEChecker {
         }
     }
 
-    public static String appName(String item) {
+    public String appName(String item) {
         String[] words = item.trim().split("\\s+");
         String last = (words.length == 1) ? item : words[words.length - 1];
         last = last+".exe";
@@ -81,7 +103,21 @@ public class CVEChecker {
     }
 
     public void getLibraries(String app) throws IOException {
-        Process process = Runtime.getRuntime().exec("powershell scripts/cool.ps1 vlc.exe  ");
+        Process process = Runtime.getRuntime().exec("powershell scripts/cool.ps1 "+app);
+    }
+    public DependencyData[] dep_info() throws IOException {
+        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependencies.json");
+        DependencyData[] depsData = mapper.readValue(jsonFile, DependencyData[].class);
+
+        return depsData;
+    }
+    private String getTrimmedString(String filePath) {
+        String fileName = filePath.substring(filePath.lastIndexOf('\\') + 1); // Extracts the file name with extension
+        int dotIndex = fileName.lastIndexOf('.');
+        return fileName.substring(0, dotIndex).toLowerCase(); // Extracts the substring without extension
+    }
+    private static String encodeURLParameter(String parameter) {
+        return URLEncoder.encode(parameter, StandardCharsets.UTF_8);
     }
 
 }

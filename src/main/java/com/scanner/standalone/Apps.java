@@ -11,7 +11,7 @@ public class Apps {
     List<Results> resultsList = new ArrayList<>();
     public List<Results> test(Data[] apps) {
         SearchVulnerability search = new SearchVulnerability();
-        File dir = new File("~\\Desktop\\4xxx");
+        File dir = new File("C:\\users\\hashghost\\Desktop\\4xxx");
         // AppsController application = new AppsController();
 
         //Data[] apps = application.app_info();
