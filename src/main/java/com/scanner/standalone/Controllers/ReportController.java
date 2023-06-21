@@ -52,7 +52,6 @@ public class ReportController implements Initializable {
 
     @FXML
     private VBox  alert;
-    List<Results> result = new ArrayList<>();
 
     @FXML
     void switchToHistory() {
@@ -98,6 +97,7 @@ public class ReportController implements Initializable {
 
     }
     public void setData(List<Results> data){
+        List<Results> result = new ArrayList<>();
         result.addAll(data);
         try {
             HashSet<String> uniqueItems = new HashSet<>();
@@ -145,8 +145,8 @@ public class ReportController implements Initializable {
         }
         System.out.println("Data received: " + result.get(0).getItem());
     }
-    List<Results> getData(){
-        return result;
-    }
+//    List<Results> getData(){
+//        return result;
+//    }
 
 }

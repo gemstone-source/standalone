@@ -111,17 +111,4 @@ public class AppsController implements Initializable {
         return apps;
     }
 
-    public void setPopup(){
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), side);
-        fadeTransition.setFromValue(1);
-        fadeTransition.setToValue(0);
-        fadeTransition.play();
-
-        popup.setVisible(true);
-
-        FadeTransition fadeTransition1 = new FadeTransition(Duration.seconds(0.5), side);
-        fadeTransition1.setFromValue(0.15);
-        fadeTransition1.setToValue(1);
-        fadeTransition1.play();
-    }
 }

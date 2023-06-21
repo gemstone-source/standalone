@@ -4,10 +4,14 @@ import com.scanner.standalone.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +58,10 @@ public class ApplicationsListController implements Initializable {
         data[0] = updateData;
         Apps apps = new Apps();
         result.addAll(apps.test(data));
-
+        if(result.isEmpty()){
+            showPopup(Coordinator.stage);
+        }
+        else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
                 AnchorPane reportPane = fxmlLoader.load();
@@ -71,6 +78,7 @@ public class ApplicationsListController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
 
     }
     @FXML
@@ -79,28 +87,44 @@ public class ApplicationsListController implements Initializable {
         cveChecker.getLibraries(cveChecker.appName(app_name.getText()));
         result.addAll(cveChecker.libraries());
         if(result.isEmpty()){
-            AppsController appsController = new AppsController();
-            appsController.setPopup();
+            showPopup(Coordinator.stage);
         }
+        else{
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
+                AnchorPane reportPane = fxmlLoader.load();
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
-            AnchorPane reportPane = fxmlLoader.load();
+                // Access the ReportController
+                ReportController reportController = fxmlLoader.getController();
+                reportController.setData(result);
 
-            // Access the ReportController
-            ReportController reportController = fxmlLoader.getController();
-            reportController.setData(result);
+                // Create a new scene with the loaded FXML
+                Scene reportScene = new Scene(reportPane);
 
-            // Create a new scene with the loaded FXML
-            Scene reportScene = new Scene(reportPane);
-
-            // Set the new scene on the stage
-            Coordinator.stage.setScene(reportScene);
-        } catch (IOException e) {
-            e.printStackTrace();
+                // Set the new scene on the stage
+                Coordinator.stage.setScene(reportScene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
+    private void showPopup(Stage ownerStage) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/pop_up.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.WINDOW_MODAL);
+            popupStage.initOwner(ownerStage); // Set the owner window to the current stage
+            popupStage.setTitle("Vulnerability Alert");
+            popupStage.setScene(new Scene(root));
+            popupStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
