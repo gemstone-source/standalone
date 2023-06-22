@@ -24,10 +24,6 @@
     "ProductVersion":  "10.0.22621.1"
   },
   {
-    "FileName":  "C:\\Windows\\System32\\SHLWAPI.dll",
-    "ProductVersion":  "10.0.22621.1"
-  },
-  {
     "FileName":  "C:\\Windows\\System32\\USER32.dll",
     "ProductVersion":  "10.0.22621.1"
   },
@@ -36,19 +32,7 @@
     "ProductVersion":  "10.0.22621.1848"
   },
   {
-    "FileName":  "C:\\Windows\\System32\\GDI32.dll",
-    "ProductVersion":  "10.0.22621.1778"
-  },
-  {
-    "FileName":  "C:\\Windows\\System32\\msvcp_win.dll",
-    "ProductVersion":  "10.0.22621.608"
-  },
-  {
     "FileName":  "C:\\Windows\\System32\\ucrtbase.dll",
     "ProductVersion":  "10.0.22621.608"
-  },
-  {
-    "FileName":  "C:\\Windows\\SYSTEM32\\AcLayers.DLL",
-    "ProductVersion":  "10.0.22621.1848"
   }
 ]
