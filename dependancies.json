@@ -2,5 +2,53 @@
   {
     "FileName":  "C:\\Windows\\SYSTEM32\\ntdll.dll",
     "ProductVersion":  "10.0.22621.1485"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\KERNEL32.DLL",
+    "ProductVersion":  "10.0.22621.1485"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\KERNELBASE.dll",
+    "ProductVersion":  "10.0.22621.1485"
+  },
+  {
+    "FileName":  "C:\\Windows\\SYSTEM32\\apphelp.dll",
+    "ProductVersion":  "10.0.22621.1"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\msvcrt.dll",
+    "ProductVersion":  "7.0.22621.608"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\sechost.dll",
+    "ProductVersion":  "10.0.22621.1"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\SHLWAPI.dll",
+    "ProductVersion":  "10.0.22621.1"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\USER32.dll",
+    "ProductVersion":  "10.0.22621.1"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\win32u.dll",
+    "ProductVersion":  "10.0.22621.1848"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\GDI32.dll",
+    "ProductVersion":  "10.0.22621.1778"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\msvcp_win.dll",
+    "ProductVersion":  "10.0.22621.608"
+  },
+  {
+    "FileName":  "C:\\Windows\\System32\\ucrtbase.dll",
+    "ProductVersion":  "10.0.22621.608"
+  },
+  {
+    "FileName":  "C:\\Windows\\SYSTEM32\\AcLayers.DLL",
+    "ProductVersion":  "10.0.22621.1848"
   }
 ]

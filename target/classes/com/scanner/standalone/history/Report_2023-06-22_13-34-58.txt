@@ -1,0 +1,40 @@
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1528
+Description: Use after free in Passwords in Google Chrome prior to 111.0.5563.110 allowed a remote attacker who had compromised the renderer process to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1529
+Description: Out of bounds memory access in WebHID in Google Chrome prior to 111.0.5563.110 allowed a remote attacker to potentially exploit heap corruption via a malicious HID device. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1530
+Description: Use after free in PDF in Google Chrome prior to 111.0.5563.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1531
+Description: Use after free in ANGLE in Google Chrome prior to 111.0.5563.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1532
+Description: Out of bounds read in GPU Video in Google Chrome prior to 111.0.5563.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1533
+Description: Use after free in WebProtect in Google Chrome prior to 111.0.5563.110 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1534
+Description: Out of bounds read in ANGLE in Google Chrome prior to 111.0.5563.110 allowed a remote attacker who had compromised the renderer process to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2023-1528
+Description: Use after free in Passwords in Google Chrome prior to 111.0.5563.110 allowed a remote attacker who had compromised the renderer process to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)
+
