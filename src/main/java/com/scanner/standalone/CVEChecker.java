@@ -115,6 +115,11 @@ public class CVEChecker {
 //        CVEChecker cveChecker = new CVEChecker();
 //        cveChecker.getLibraries(cveChecker.appName(item));
         File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependencies.json");
+
+        // Check if the file is empty
+        if (jsonFile.length() == 0) {
+            jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependancies.json");
+        }
         DependencyData[] depsData = mapper.readValue(jsonFile, DependencyData[].class);
 
         return depsData;

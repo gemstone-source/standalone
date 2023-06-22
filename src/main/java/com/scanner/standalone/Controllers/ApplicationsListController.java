@@ -82,9 +82,10 @@ public class ApplicationsListController implements Initializable {
 
     }
     @FXML
-    void setLibrary_action() throws IOException {
+    void setLibrary_action() throws IOException, InterruptedException {
         CVEChecker cveChecker = new CVEChecker();
         cveChecker.getLibraries(cveChecker.appName(app_name.getText()));
+        Thread.sleep(1000);
         result.addAll(cveChecker.libraries());
         if(result.isEmpty()){
             showPopup(Coordinator.stage);
