@@ -243,7 +243,7 @@
                   <Insets left="50.0" />
                </padding>
                <graphic>
-                  <FontAwesomeIconView fill="#c8bcf6" glyphName="HOME" size="17" wrappingWidth="18.47617244720459">
+                  <FontAwesomeIconView fill="#c8bcf6" glyphName="HISTORY" size="17" wrappingWidth="18.47617244720459">
                      <font>
                         <Font name="Agency FB" size="96.0" />
                      </font>

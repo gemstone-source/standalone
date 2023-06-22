@@ -11,8 +11,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -144,7 +148,26 @@ public class ReportController implements Initializable {
             throw new RuntimeException(e);
         }
         System.out.println("Data received: " + result.get(0).getItem());
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+        String fileName = "C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\history\\Report_" + now.format(formatter) + ".txt";
+        saveResultsToFile(result,fileName);
+        System.out.println("Results saved to results.txt");
         result.clear();
+    }
+    // Saving result to file
+    public static void saveResultsToFile(List<Results> results, String filename) {
+        try (FileWriter writer = new FileWriter(filename)) {
+            for (Results result : results) {
+                writer.write("Item: " + result.getItem() + "\n");
+                writer.write("Install Date: " + result.getInstallDate() + "\n");
+                writer.write("CVE ID: " + result.getCveid() + "\n");
+                writer.write("Description: " + result.getDescription() + "\n");
+                writer.write("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 //    List<Results> getData(){
 //        return result;

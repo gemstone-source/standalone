@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -49,7 +50,7 @@ public class ApplicationsListController implements Initializable {
     }
 
     @FXML
-    void setApp_action() {
+        void setApp_action() {
         Data updateData = new Data();
         updateData.setDisplayName(app_name.getText());
         updateData.setInstallDate(app_date.getText());

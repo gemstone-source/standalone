@@ -15,6 +15,8 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
+
 
 public class CVEChecker {
     ObjectMapper mapper = new ObjectMapper();
@@ -134,3 +136,4 @@ public class CVEChecker {
     }
 
 }
+

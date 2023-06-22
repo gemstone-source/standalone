@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.concurrent.Task;
+
 
 public class ScanController implements Initializable {
     @FXML
@@ -54,6 +56,11 @@ public class ScanController implements Initializable {
 
     @FXML
     private ReportController reportController;
+
+
+    @FXML
+    private HBox progressBox;
+
 
 
     @FXML
@@ -104,18 +111,57 @@ public class ScanController implements Initializable {
             });
         });
     }
-    @FXML
-    void loadReportController() {
-        Apps apps = new Apps();
-        AppsController appsController = new AppsController();
+//    @FXML
+//    void loadReportController() {
+//        Apps apps = new Apps();
+//        AppsController appsController = new AppsController();
+//
+//        try {
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
+//            AnchorPane reportPane = fxmlLoader.load();
+//
+//            // Access the ReportController
+//           ReportController reportController = fxmlLoader.getController();
+//            reportController.setData(apps.test(appsController.app_info()));
+//
+//            // Create a new scene with the loaded FXML
+//            Scene reportScene = new Scene(reportPane);
+//
+//            // Set the new scene on the stage
+//            Coordinator.stage.setScene(reportScene);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+@FXML
+void loadReportController() {
+    Apps apps = new Apps();
+    AppsController appsController = new AppsController();
+
+    // Show the progress bar
+    progressBox.setVisible(true);
+
+    Task<List<Results>> task = new Task<>() {
+        @Override
+        protected List<Results> call() throws Exception {
+            // Perform your long-running task here
+            return apps.test(appsController.app_info());
+        }
+    };
+
+    task.setOnSucceeded(event -> {
+        // Hide the progress bar
+        progressBox.setVisible(false);
+
+        List<Results> results = task.getValue();
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
             AnchorPane reportPane = fxmlLoader.load();
 
             // Access the ReportController
-           ReportController reportController = fxmlLoader.getController();
-            reportController.setData(apps.test(appsController.app_info()));
+            ReportController reportController = fxmlLoader.getController();
+            reportController.setData(results);
 
             // Create a new scene with the loaded FXML
             Scene reportScene = new Scene(reportPane);
@@ -125,6 +171,11 @@ public class ScanController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    });
+
+    // Start the task in a separate thread
+    new Thread(task).start();
+}
+
 }
 
