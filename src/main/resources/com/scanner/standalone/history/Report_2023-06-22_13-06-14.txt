@@ -1,0 +1,5 @@
+Item: Google Chrome
+Install Date: 2023-06-22
+CVE ID: CVE-2021-25801
+Description: A buffer overflow vulnerability in the __Parse_indx component of VideoLAN Google Chrome 114.0.5735.134 allows attackers to cause an out-of-bounds read via a crafted .avi file.
+
