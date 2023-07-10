@@ -13,7 +13,7 @@ public class Apps {
 
     public List<Results> test(Data[] apps) {
         SearchVulnerability search = new SearchVulnerability();
-        File dir = new File("C:\\users\\hashghost\\Desktop\\4xxx");
+        File dir = new File("CVE_UPDATES");
         ExecutorService executor = Executors.newFixedThreadPool(12); // Use 12 Threads
         Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 

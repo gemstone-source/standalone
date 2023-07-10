@@ -27,5 +27,4 @@ public class DependencyData {
     public void setProductVersion(String productVersion) {
         this.productVersion = productVersion;
     }
-
 }

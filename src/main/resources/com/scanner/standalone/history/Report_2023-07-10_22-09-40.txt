@@ -1,0 +1,30 @@
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25802
+Description: A buffer overflow vulnerability in the AVI_ExtractSubtitle component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.
+
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25803
+Description: A buffer overflow vulnerability in the vlc_input_attachment_New component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.
+
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25804
+Description: A NULL-pointer dereference in "Open" in avi.c of VideoLAN VLC Media Player 3.0.11 can a denial of service (DOS) in the application.
+
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25802
+Description: A buffer overflow vulnerability in the AVI_ExtractSubtitle component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.
+
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25803
+Description: A buffer overflow vulnerability in the vlc_input_attachment_New component of VideoLAN VLC Media Player 3.0.11 allows attackers to cause an out-of-bounds read via a crafted .avi file.
+
+Item: VLC
+Install Date: 2023-07-10
+CVE ID: CVE-2021-25804
+Description: A NULL-pointer dereference in "Open" in avi.c of VideoLAN VLC Media Player 3.0.11 can a denial of service (DOS) in the application.
+

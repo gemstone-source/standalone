@@ -80,7 +80,7 @@ public class HistoryController implements Initializable {
 
         // Loop for loading dynamic applications
         try {
-            File files = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\history");;
+            File files = new File("src/main/resources/com/scanner/standalone/history");;
             for (File file : files.listFiles()){
                 FXMLLoader fxmlLoader = new FXMLLoader();
               //  fxmlLoader.setLocation(getClass().getResource("com/scanner/standalone/fxml/history_list.fxml"));

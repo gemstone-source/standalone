@@ -35,19 +35,13 @@ public class CVEChecker {
 
             try {
                 HttpClient httpClient = HttpClients.createDefault();
-                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + encodeURLParameter(appName) + encodeURLParameter(appVersion));/*+ encodeURLParameter(appVersion)*/
+                HttpGet request = new HttpGet("https://services.nvd.nist.gov/rest/json/cves/1.0?keyword=" + encodeURLParameter(appName) + encodeURLParameter(appVersion) + encodeURLParameter(appVersion) );/*+ encodeURLParameter(appVersion)*/
                 HttpResponse response = httpClient.execute(request);
 
                 if (response.getStatusLine().getStatusCode() == 200) {
                     String responseBody = EntityUtils.toString(response.getEntity());
                     System.out.println(responseBody);
                     outputs.addAll(cveChecker.retrieveData(responseBody,appName,appVersion));
-                    // Parse the JSON response and extract the relevant information
-                    // (application name, version, CVE ID, severity score)
-                    // Update your code accordingly based on the structure of the API response
-                    // You might need to use a JSON parsing library like Jackson or Gson
-
-                    // Process the retrieved information as per your requirements (e.g., store in a data structure, display to the user)
                 } else {
                     System.err.println("Error: API request failed with status code " + response.getStatusLine().getStatusCode());
                 }
@@ -107,20 +101,18 @@ public class CVEChecker {
     }
 
     public void getLibraries(String app) throws IOException {
-        String scriptPath = "C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\scripts\\cool.ps1";
+        String scriptPath = "src/main/resources/com/scanner/standalone/scripts/cool.ps1";
         String[] command = {"powershell", "-File", scriptPath, app};
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         Process process = processBuilder.start();
-     //   Process process = Runtime.getRuntime().exec("powershell C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\scripts\\cool.ps1 "+app);
     }
     public DependencyData[] dep_info() throws IOException {
-//        CVEChecker cveChecker = new CVEChecker();
-//        cveChecker.getLibraries(cveChecker.appName(item));
-        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependencies.json");
+
+        File jsonFile = new File("dependencies.json");
 
         // Check if the file is empty
         if (jsonFile.length() == 0) {
-            jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\dependancies.json");
+            jsonFile = new File("dependancies.json");
         }
         DependencyData[] depsData = mapper.readValue(jsonFile, DependencyData[].class);
 
@@ -134,6 +126,4 @@ public class CVEChecker {
     private static String encodeURLParameter(String parameter) {
         return URLEncoder.encode(parameter, StandardCharsets.UTF_8);
     }
-
 }
-

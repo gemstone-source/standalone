@@ -150,7 +150,7 @@ public class ReportController implements Initializable {
         System.out.println("Data received: " + result.get(0).getItem());
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
-        String fileName = "C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\src\\main\\resources\\com\\scanner\\standalone\\history\\Report_" + now.format(formatter) + ".txt";
+        String fileName = "src/main/resources/com/scanner/standalone/history/Report_" + now.format(formatter) + ".txt";
         saveResultsToFile(result,fileName);
         System.out.println("Results saved to results.txt");
         result.clear();
@@ -169,8 +169,4 @@ public class ReportController implements Initializable {
             e.printStackTrace();
         }
     }
-//    List<Results> getData(){
-//        return result;
-//    }
-
 }

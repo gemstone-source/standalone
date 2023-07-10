@@ -105,7 +105,7 @@ public class AppsController implements Initializable {
 
     // Declaration of json file which stores user applications.
     public Data[] app_info() throws IOException {
-        File jsonFile = new File("C:\\Users\\hashghost\\Desktop\\Final-Year-Project\\standalone\\apps.json");
+        File jsonFile = new File("apps.json");
         Data[] apps = mapper.readValue(jsonFile, Data[].class);
 
         return apps;

@@ -111,28 +111,7 @@ public class ScanController implements Initializable {
             });
         });
     }
-//    @FXML
-//    void loadReportController() {
-//        Apps apps = new Apps();
-//        AppsController appsController = new AppsController();
-//
-//        try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/scanner/standalone/fxml/report.fxml"));
-//            AnchorPane reportPane = fxmlLoader.load();
-//
-//            // Access the ReportController
-//           ReportController reportController = fxmlLoader.getController();
-//            reportController.setData(apps.test(appsController.app_info()));
-//
-//            // Create a new scene with the loaded FXML
-//            Scene reportScene = new Scene(reportPane);
-//
-//            // Set the new scene on the stage
-//            Coordinator.stage.setScene(reportScene);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
 @FXML
 void loadReportController() {
     Apps apps = new Apps();
