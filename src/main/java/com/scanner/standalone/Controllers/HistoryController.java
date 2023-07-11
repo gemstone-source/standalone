@@ -80,22 +80,27 @@ public class HistoryController implements Initializable {
 
         // Loop for loading dynamic applications
         try {
-            File files = new File("src/main/resources/com/scanner/standalone/history");;
-            for (File file : files.listFiles()){
-                FXMLLoader fxmlLoader = new FXMLLoader();
-              //  fxmlLoader.setLocation(getClass().getResource("com/scanner/standalone/fxml/history_list.fxml"));
+            File files = new File("history");
+           try {
+               for (File file : files.listFiles()){
+                   FXMLLoader fxmlLoader = new FXMLLoader();
+                   //  fxmlLoader.setLocation(getClass().getResource("com/scanner/standalone/fxml/history_list.fxml"));
 
-                // Found Vulnerability Pane
-                fxmlLoader.setLocation(getClass().getResource("/com/scanner/standalone/fxml/history_list.fxml"));
+                   // Found Vulnerability Pane
+                   fxmlLoader.setLocation(getClass().getResource("/com/scanner/standalone/fxml/history_list.fxml"));
 
-                VBox vbox = fxmlLoader.load();
-                HistoryListController controller = fxmlLoader.getController();
-                controller.setData(file.getName());
+                   VBox vbox = fxmlLoader.load();
+                   HistoryListController controller = fxmlLoader.getController();
+                   controller.setData(file.getName());
 
 
-                history_list.getChildren().add(vbox);
-            }
-        } catch (IOException e) {
+                   history_list.getChildren().add(vbox);
+               }
+        }catch(NullPointerException e){
+               System.out.println("null value found");
+           }
+        }
+           catch (IOException e) {
             throw new RuntimeException(e);
         }
 

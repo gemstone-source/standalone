@@ -49,7 +49,7 @@ public class HistoryListController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hbox.setOnMouseClicked(event -> {
-            File filePath = new File("src/main/resources/com/scanner/standalone/history/"+report_name.getText());
+            File filePath = new File("history/"+report_name.getText());
             try {
                 Process process = Runtime.getRuntime().exec("powershell notepad.exe "+ filePath);
             } catch (IOException e) {
